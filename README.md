@@ -2,6 +2,23 @@
 
 A new Flutter project.
 
+Video link: https://drive.google.com/file/d/1kprbWCcWhYDIhMF72NrAPNcSawHAa7ci/view?usp=sharing
+
+Screenshots:
+<table>
+    <tr>
+      <td>
+        <img src="https://github.com/MridulTailor/newsapp/assets/71081929/275d6232-688e-452f-a81c-5aa6ab82e11c" height="300">
+      </td>
+      <td>
+        <img src="https://github.com/MridulTailor/newsapp/assets/71081929/c08c11fb-b6db-4e05-8127-7d68cc8364a5" height="300">
+      </td>
+      <td>
+        <img src="https://github.com/MridulTailor/newsapp/assets/71081929/d04c0e2a-9140-4ae0-915d-25a46b583ca0" height="300">
+      </td>
+    </tr>
+  </table>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
