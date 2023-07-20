@@ -1,4 +1,4 @@
-import 'export.dart';
+import 'config/export.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

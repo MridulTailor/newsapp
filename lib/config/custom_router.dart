@@ -1,4 +1,4 @@
-import 'package:newsapp/export.dart';
+import 'package:newsapp/config/export.dart';
 
 class CustomRouter {
   static Route onGenerateRoute(RouteSettings settings) {
@@ -7,14 +7,16 @@ class CustomRouter {
       case '/':
         return MaterialPageRoute(
           settings: const RouteSettings(name: '/'),
-          builder: (_) => Scaffold(),
+          builder: (_) => const Scaffold(),
         );
       case SplashScreen.routeName:
         return SplashScreen.route();
       case HomePage.routeName:
-        return MaterialPageRoute(builder: (_) => const HomePage());
+        return HomePage.route();
       case DetailPage.routeName:
-        return MaterialPageRoute(builder: (_) => const DetailPage());
+        return DetailPage.route(args: settings.arguments as DetailPageArgs);
+      case ExploreScreen.routeName:
+        return ExploreScreen.route();
       default:
         return _errorRoute();
     }

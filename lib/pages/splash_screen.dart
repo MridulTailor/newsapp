@@ -1,4 +1,4 @@
-import 'package:newsapp/export.dart';
+import 'package:newsapp/config/export.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/splash';

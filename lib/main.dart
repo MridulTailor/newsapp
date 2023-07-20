@@ -1,12 +1,14 @@
-import 'export.dart';
+import 'config/export.dart';
 
 void main() {
   runApp(
     MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => HomepageProvider()),
-      ],
-      child: const MyApp(),
-    ),
+        providers: [
+          ChangeNotifierProvider(create: (_) => HomepageProvider()),
+          ChangeNotifierProvider(create: (_) => ExploreProvider()),
+        ],
+        builder: (context, _) {
+          return const MyApp();
+        }),
   );
 }
