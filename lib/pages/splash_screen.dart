@@ -18,20 +18,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 2),
+    Future.delayed(const Duration(seconds: 1),
         () => Navigator.of(context).pushReplacementNamed(HomePage.routeName));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: Center(
-      child: Image.asset(
-        'assets/splash.gif',
-        fit: BoxFit.cover,
-        height: double.infinity,
-        width: double.infinity,
-      ),
-    ));
+          child: Image.asset(
+            'assets/news.png',
+            fit: BoxFit.cover,
+            width: MediaQuery.of(context).size.width * 0.7,
+          ),
+        ));
   }
 }

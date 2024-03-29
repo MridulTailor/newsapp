@@ -50,7 +50,7 @@ class Articles {
   Articles.fromJson(Map<String, dynamic> json) {
     source = json['source'] != null ? Source.fromJson(json['source']) : null;
     author = //contains https
-        json['author'] != null
+        json['author'] != null && json['author'] != ''
             ? (json['author'].toString().substring(0, 4) == 'http')
                 ? 'Not Available'
                 : json['author']

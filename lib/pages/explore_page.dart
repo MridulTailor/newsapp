@@ -117,6 +117,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     },
                     decoration: InputDecoration(
                       hintText: "Search",
+                      hintStyle: const TextStyle(color: Colors.black),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: const BorderSide(color: Colors.black),

@@ -235,6 +235,8 @@ class Home extends StatelessWidget {
                                           .title ??
                                       "Loading...",
                                   softWrap: true,
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 3,
                                   style: const TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
