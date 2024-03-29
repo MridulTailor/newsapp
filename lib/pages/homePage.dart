@@ -1,3 +1,5 @@
+import 'package:newsapp/providers/theme_provider.dart';
+
 import '../config/export.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,6 +30,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     //carousel controller
 
     List<Widget> screens = [
@@ -41,40 +44,25 @@ class _HomePageState extends State<HomePage> {
           onWillPop: () async => false,
           child: Scaffold(
               key: __.scaffoldKey,
-              drawer: new Drawer(
-                  child: Container(
-                decoration: const BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: SafeArea(
-                  child: Column(
-                    children: [
-                      Text(
-                        "News App",
+              drawer: Drawer(
+                  child: SafeArea(
+                child: Column(
+                  children: [
+                    ListTile(
+                        title: const Text("Night Mode",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20)),
+                        trailing: Switch(
+                          value: themeProvider.themeMode == ThemeMode.dark,
+                          onChanged: (value) {
+                            themeProvider.toggleTheme(value);
+                          },
+                        )),
+                    const Spacer(),
+                    const Text("Version 1.0.0",
                         style: TextStyle(
-                            fontSize: 40,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      SizedBox(
-                        width: double.maxFinite,
-                        child: Image.asset(
-                          "assets/splash.gif",
-                          height: 200,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Spacer(),
-                      Text("Version 1.0.0",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold)),
-                    ],
-                  ),
+                            fontSize: 20, fontWeight: FontWeight.bold)),
+                  ],
                 ),
               )),
               bottomNavigationBar: BottomNavigationBar(
@@ -83,9 +71,13 @@ class _HomePageState extends State<HomePage> {
                     __.changeIndex(index);
                   },
                   type: BottomNavigationBarType.shifting,
-                  backgroundColor: Colors.white,
-                  selectedItemColor: Colors.black,
-                  unselectedItemColor: Colors.grey,
+                  backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                  selectedItemColor: themeProvider.themeMode == ThemeMode.dark
+                      ? Colors.white
+                      : Colors.black,
+                  unselectedItemColor: themeProvider.themeMode == ThemeMode.dark
+                      ? Colors.white
+                      : Colors.black,
                   selectedLabelStyle:
                       const TextStyle(fontWeight: FontWeight.bold),
                   // ignore: prefer_const_literals_to_create_immutables
